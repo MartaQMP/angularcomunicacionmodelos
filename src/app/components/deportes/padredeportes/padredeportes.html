@@ -1,0 +1,15 @@
+<div id="div1">
+    <h1 id="titulo">Padre Deportes</h1>
+    <h3 style="background-color: yellow;">{{favorito}}</h3>
+    <ul>
+        @for(deporte of deportes; track deporte){
+        <li>
+            <app-hijodeportes
+                [sport]="deporte"
+                (seleccionarFavoritoPadre)="seleccionarFavorito($event)"
+            ></app-hijodeportes>
+        </li>
+        }
+    </ul>
+    
+</div>

@@ -1,0 +1,8 @@
+.estadoOn {
+    background: linear-gradient( #e77136, #e7ca36, #ace736);
+    border-radius: 5px;
+}
+.estadoOff {
+    background: linear-gradient( #605be6, #a55be6, #e65be1);
+    border-radius: 5px;
+}

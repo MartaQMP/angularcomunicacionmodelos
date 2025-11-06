@@ -1,0 +1,11 @@
+<div id="div1">
+    <h1>{{ cochecito.marca }} {{ cochecito.modelo }}</h1>
+    @if (cochecito.estado ==false){
+    <h3 class="estadoOff">{{ mensaje }}</h3>
+    }@else {
+    <h3 class="estadoOn">{{ mensaje }}</h3>
+    }
+    <h4>Velocidad: {{ cochecito.velocidad }}km/h</h4>
+    <button (click)="cambiarEstadoCoche()" class="btn btn-danger">Start/Stop</button>
+    <button (click)="acelerarCoche()" class="btn btn-success">Acelerar</button>
+</div>

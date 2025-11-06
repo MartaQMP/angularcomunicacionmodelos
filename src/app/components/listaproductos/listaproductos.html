@@ -1,0 +1,9 @@
+<div id="div1">
+    <h1 id="titulo">Modelos Producto Angular</h1>
+    @for(prod of productos; track prod){
+    <div>
+        <h2>{{ prod.nombre }}: {{ prod.precio }}€</h2>
+        <img src="{{ prod.imagen }}" style="width: 300px" />
+    </div>
+    }
+</div>
