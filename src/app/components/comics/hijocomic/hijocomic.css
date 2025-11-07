@@ -1,0 +1,12 @@
+#card {
+    background: linear-gradient(#b0f7f1, #b0daf7, #b0b6f7);
+    border-radius: 5px;
+    margin: auto;
+    width: 70%;
+    box-shadow: 2px 2px;
+    margin-bottom: 5%;
+    padding: 2%;
+}
+img {
+    width: 60%;
+}

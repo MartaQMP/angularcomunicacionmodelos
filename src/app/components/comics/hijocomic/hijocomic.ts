@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Comic } from '../../../models/comic';
 
 @Component({
@@ -8,5 +8,16 @@ import { Comic } from '../../../models/comic';
     styleUrl: './hijocomic.css',
 })
 export class Hijocomic {
-    @Input() objeto!: Comic;
+    @Input() objetocomic!: Comic;
+    @Input() index!: number;
+    @Output() seleccionarFavorito: EventEmitter<any> = new EventEmitter<any>();
+    @Output() eliminarComic: EventEmitter<any> = new EventEmitter<any>();
+
+    elegirFavorito(): void {
+        this.seleccionarFavorito.emit(this.objetocomic);
+    }
+
+    borrarComic():void{
+        this.eliminarComic.emit(this.index)
+    }
 }

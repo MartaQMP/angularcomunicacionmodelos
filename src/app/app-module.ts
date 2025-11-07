@@ -13,6 +13,8 @@ import { Hijodeportes } from './components/deportes/hijodeportes/hijodeportes';
 import { Hijocomic } from './components/comics/hijocomic/hijocomic';
 import { Padrecomic } from './components/comics/padrecomic/padrecomic';
 import { FormsModule } from '@angular/forms';
+import { Comics } from './services/comics';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -28,7 +30,12 @@ import { FormsModule } from '@angular/forms';
         Padrecomic,
     ],
     imports: [BrowserModule, routing, FormsModule],
-    providers: [provideBrowserGlobalErrorListeners(), appRoutingProvider],
+    providers: [
+        provideBrowserGlobalErrorListeners(),
+        appRoutingProvider,
+        Comics,
+        provideHttpClient(),
+    ],
     bootstrap: [App],
 })
 export class AppModule {}

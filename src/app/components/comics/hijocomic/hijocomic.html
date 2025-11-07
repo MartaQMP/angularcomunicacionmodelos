@@ -1,1 +1,9 @@
-<p>hijocomic works!</p>
+<div id="card">
+    <h2>{{ objetocomic.titulo }}</h2>
+    <img src="{{ objetocomic.imagen }}" />
+    <p>{{ objetocomic.descripcion }}</p>
+    <button (click)="elegirFavorito()" class="btn btn-dark" style="margin-right: 5%">
+        Seleccionar favorito
+    </button>
+    <button (click)="borrarComic()" class="btn btn-danger">Eliminar</button>
+</div>

@@ -1,6 +1,25 @@
 <div id="div1">
     <h1 id="titulo">Comics</h1>
-    @for (comic of comics; track comic) {
-    <app-hijocomic></app-hijocomic>
+    @if(comicFavorito){
+    <h3 style="color: white; background-color: #5b38e5; width: 40%">Favorito: {{ comicFavorito.titulo }}</h3>
+    }
+    <form #form="ngForm">
+        <label class="form-label">Nombre:</label>
+        <input class="form-control" #cajaNombre name="cajaNombre" />
+        <label class="form-label">Descripcion:</label>
+        <input class="form-control" #cajaDescripcion name="cajaDescripcion" />
+        <label class="form-label">Imagen:</label>
+        <input class="form-control" #cajaImagen name="cajaImagen" />
+        <br />
+        <button (click)="crearComic()" class="btn btn-success">Crear</button>
+    </form>
+    <hr />
+    @for (comic of comics; track comic; let i =$index) {
+    <app-hijocomic
+        [objetocomic]="comic"
+        [index]="i"
+        (seleccionarFavorito)="seleccionarFavorito($event)"
+        (eliminarComic)="eliminarComic($event)"
+    ></app-hijocomic>
     }
 </div>
